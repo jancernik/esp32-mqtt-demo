@@ -7,7 +7,7 @@ const options = {
   password: '1234'
 };
 
-const client = mqtt.connect('wss://broker.hivemq.com:8000/mqtt', options);
+const client = mqtt.connect('tsl://broker.hivemq.com:8000/mqtt', options);
 
 client.on('connect', () => {
   console.log('Connected!');
