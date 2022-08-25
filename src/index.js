@@ -7,10 +7,11 @@ let color = 'rgb(0, 0, 0)';
 let isCoolDown = false;
 
 const options = {
-  clientId: 'u232309rfj32w0e4fv346t23wervyauer',
+  clientId: 'u23230rj32w0e4fv346t23wervyauer',
 };
 
-const client = mqtt.connect('ws://broker.hivemq.com:8000/mqtt', options);
+// const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', options);
+const client = mqtt.connect('tls://broker.emqx.io:8084/mqtt', options);
 
 client.on('connect', () => {
   console.log('Connected!');
