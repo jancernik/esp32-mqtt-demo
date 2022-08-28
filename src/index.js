@@ -30,6 +30,7 @@ const options = {
 const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', options);
 
 const rgbToHex = (rgb) => `#${rgbHex(rgb)}`;
+
 const rgbCompToHex = (val, comp) => {
   let d = [];
   if (comp === 'r') d = [1, 2];
@@ -41,6 +42,15 @@ const rgbCompToHex = (val, comp) => {
   newColor.splice(d[0], 1, hexArray[0]);
   newColor.splice(d[1], 1, hexArray[1]);
   return newColor.join('');
+};
+
+const hexToRgbComp = (comp) => {
+  let d = [];
+  if (comp === 'r') d = [1, 3];
+  if (comp === 'g') d = [3, 5];
+  if (comp === 'b') d = [5, 7];
+  const hexComp = color.substring(d[0], d[1]);
+  return parseInt(hexComp, 16).toString();
 };
 
 client.on('connect', () => {
@@ -72,12 +82,10 @@ const handleMessage = (topic, message) => {
 };
 
 const sendColor = () => {
-  if (!isCoolDown) {
-    isCoolDown = true;
-    client.publish('redes/esp32/rgb', color);
-    console.log('redes/esp32/rgb', color);
-    setTimeout(() => (isCoolDown = false), 300);
-  }
+  client.publish(MQTT_RGB, color);
+  // setTimeout(() => (client.publish(MQTT_R, hexToRgbComp('r'))), 150);
+  // setTimeout(() => (client.publish(MQTT_G, hexToRgbComp('g'))), 300);
+  // setTimeout(() => (client.publish(MQTT_B, hexToRgbComp('b'))), 450);
 };
 window.addEventListener('mouseup', () => {
   sendColor();
