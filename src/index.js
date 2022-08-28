@@ -1,7 +1,7 @@
 import './style/style.scss';
 import * as mqtt from 'mqtt/dist/mqtt';
 import ColorPicker from 'simple-color-picker';
-import hexRgb from 'hex-rgb';
+import { v4 as uuidv4 } from 'uuid';
 import rgbHex from 'rgb-hex';
 
 var colorPicker = new ColorPicker({
@@ -23,7 +23,7 @@ const MQTT_A = 'redes/esp32/a';
 const MQTT_RGB = 'redes/esp32/rgb';
 
 const options = {
-  clientId: 'u23230rj32w0e4fv346t23wervyauer',
+  clientId: uuidv4(),
 };
 
 // const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', options);
