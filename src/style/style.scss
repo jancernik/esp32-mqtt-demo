@@ -7,7 +7,44 @@
   box-sizing: border-box;
 }
 
-.Scp {
-  margin: 5% auto 0;
+body {
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scp-wrapper {
+  background-color: #121212;
+  padding: 1rem;
+}
+
+.Scp {
+  display: flex;
+  width: 361px !important;
+  .Scp-saturation {
+    margin-right: 0;
+  }
+  .Scp-hue {
+    margin-left: 16px;
+    width: 20px;
+  }
+  .Scp-brightness {
+    width: 325px;
+  }
+  .Scp-hSelector {
+    top: -5px;
+    right: 0;
+    background: none;
+    border: 2px solid #fff;
+    height: 12px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .Scp-sbSelector {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+    left: -6px;
+  }
 }
