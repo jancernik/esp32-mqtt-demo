@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-color: #eee;
+  color: #eee;
 }
 
 .container {
@@ -44,6 +44,7 @@ color: #eee;
   }
   .Scp-brightness {
     width: 325px;
+
   }
   .Scp-hSelector {
     top: -5px;
@@ -62,28 +63,50 @@ color: #eee;
   }
 }
 
-
 .sensor {
   gap: 1rem;
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   > div {
-  box-shadow: 0 0 2rem 0 rgba($color: #000, $alpha: 0.7);
+    width: 200px;
+    box-shadow: 0 0 2rem 0 rgba($color: #000, $alpha: 0.7);
     display: flex;
     background-color: #121212;
     border-radius: 8px;
     flex-direction: column;
     padding: 16px;
     gap: 0.5rem;
-    h1, h2 {
+    h1,
+    h2 {
       margin: 0;
     }
     h2 {
       font-weight: 500;
-    font-size: 1.3rem;    }
+      font-size: 1.3rem;
+    }
     h1 {
       font-weight: 600;
       font-size: 1.8rem;
+    }
+    > div {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      height: 10px;
+      position: relative;
+      // overflow: hidden;
+      div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s ease-in-out;
+      }
+      .hum-progress {
+        background: #99ccff;
+      }
+      .temp-progress {
+        background: #cce6ff;
+      }
     }
   }
 }

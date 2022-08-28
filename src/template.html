@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESP32</title>
   </head>
+
   <body>
     <div class="container">
       <div class="sensor">
         <div class="temp">
           <h2 class="title">Temperatura</h2>
           <h1><span class="temp-value">0.00</span><span>&nbsp;°C</span></h1>
+          <div class="temp-indicator">
+            <div class="temp-progress"></div>
+          </div>
         </div>
         <div class="hum">
           <h2 class="title">Humedad</h2>
-          <h1><span class="hum-value">0.00</span><span>&nbsp;%</span></div>
+          <h1><span class="hum-value">0.00</span><span>&nbsp;%</span></h1>
+          <div class="hum-indicator">
+            <div class="hum-progress"></div>
+          </div>
         </div>
       </div>
     </div>
