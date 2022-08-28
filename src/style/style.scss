@@ -20,7 +20,6 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  // align-items: center;
   flex-direction: row-reverse;
   gap: 32px;
 }
@@ -106,6 +105,20 @@ body {
       }
       .temp-progress {
         background: #cce6ff;
+      }
+    }
+  }
+}
+
+@media (max-width: '670px') {
+  .container {
+    flex-direction: column;
+    gap: 16px;
+    .sensor {
+      flex-direction: row;
+      > div {
+        flex: 1 1 0;
+        width: 100%;
       }
     }
   }
