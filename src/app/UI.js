@@ -38,11 +38,15 @@ export default class UI {
   }
 
   static modifyColorPicker() {
+    const container = document.querySelector('.container');
     const scp = document.querySelector('.Scp');
     console.log('scp: ', scp);
     const scpWrapper = document.createElement('div');
     scpWrapper.classList.add('scp-wrapper');
     scp.parentNode.insertBefore(scpWrapper, scp);
     scpWrapper.appendChild(scp);
+
+    scpWrapper.parentNode.insertBefore(container, scpWrapper);
+    container.appendChild(scpWrapper);
   }
 }

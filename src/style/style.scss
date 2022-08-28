@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import '~normalize.css/normalize';
 @import './constants';
 
@@ -12,11 +13,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
+color: #eee;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-direction: row-reverse;
+  gap: 32px;
 }
 
 .scp-wrapper {
   background-color: #121212;
-  padding: 1rem;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 2rem 0 rgba($color: #000, $alpha: 0.7);
 }
 
 .Scp {
@@ -46,5 +59,31 @@ body {
     height: 12px;
     top: -6px;
     left: -6px;
+  }
+}
+
+
+.sensor {
+  gap: 1rem;
+  display: flex;
+flex-direction: column;
+  > div {
+  box-shadow: 0 0 2rem 0 rgba($color: #000, $alpha: 0.7);
+    display: flex;
+    background-color: #121212;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 0.5rem;
+    h1, h2 {
+      margin: 0;
+    }
+    h2 {
+      font-weight: 500;
+    font-size: 1.3rem;    }
+    h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
   }
 }

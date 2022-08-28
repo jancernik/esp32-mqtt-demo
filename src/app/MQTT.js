@@ -3,13 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import Handle from './handlers';
 import topic from './topics';
 
-const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
-  clientId: uuidv4(),
-});
-
-// const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+// const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
 //   clientId: uuidv4(),
 // });
+
+const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+  clientId: uuidv4(),
+});
 
 export default class MQTT {
   static bindEvents() {
