@@ -1,7 +1,9 @@
 import ColorPicker from 'simple-color-picker';
+import 'toolcool-range-slider';
 import MQTT from './MQTT';
 import topic from './topics';
 import g from './global';
+import Handle from './handlers';
 
 export const colorPicker = new ColorPicker({
   el: document.body,
@@ -11,13 +13,16 @@ export const colorPicker = new ColorPicker({
 
 export default class UI {
   static bindEvents() {
-    window.addEventListener('mouseup', () => {
+    const sliders = document.querySelector('.slider');
+    window.addEventListener('mouseup', (e) => {
+      if (sliders.contains(e.target)) return;
       MQTT.send(topic.rgb, g.color);
     });
 
     window.addEventListener(
       'touchend',
       () => {
+        if (sliders.contains(e.target)) return;
         MQTT.send(topic.rgb, g.color);
       },
       false
@@ -26,6 +31,7 @@ export default class UI {
     window.addEventListener(
       'touchcancel',
       () => {
+        if (sliders.contains(e.target)) return;
         MQTT.send(topic.rgb, g.color);
       },
       false
@@ -35,6 +41,8 @@ export default class UI {
       g.color = getHexString;
       document.body.style.background = g.color;
     });
+
+    window.addEventListener('resize', Handle.resize);
   }
 
   static modifyColorPicker() {
