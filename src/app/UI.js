@@ -21,7 +21,7 @@ export default class UI {
 
     window.addEventListener(
       'touchend',
-      () => {
+      (e) => {
         if (sliders.contains(e.target)) return;
         MQTT.send(topic.rgb, g.color);
       },
@@ -30,7 +30,7 @@ export default class UI {
 
     window.addEventListener(
       'touchcancel',
-      () => {
+      (e) => {
         if (sliders.contains(e.target)) return;
         MQTT.send(topic.rgb, g.color);
       },
