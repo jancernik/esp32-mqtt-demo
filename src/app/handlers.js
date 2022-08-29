@@ -37,7 +37,7 @@ export default class Handle {
     if (rTopic === topic.rgb) {
       if (message.length > 7) {
         colorPicker.setColor(Color.rgbToHex(g.color, message));
-      } else colorPicker.setColor(message);
+      } else if (g.color !== message ) colorPicker.setColor(message);
       console.log('message: ', message);
     }
     console.log(rTopic, message);
