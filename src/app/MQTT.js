@@ -13,7 +13,18 @@ const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
 
 export default class MQTT {
   static bindEvents() {
-    client.on('connect', () => console.log('Connected!'));
+    client.on('connect', () => {
+      console.log('Connected!');
+      const loadingScreen = document.querySelector('.loading-screen');
+      const loader = document.querySelector('.loader');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+      }, 200);
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      },400);
+    });
     client.on('error', (error) => console.log('Error:', error));
     client.on('message', (topic, message) => {
       Handle.message(topic, String.fromCharCode.apply(null, message));
