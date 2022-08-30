@@ -1,0 +1,24 @@
+{
+  "cSpell.words": [
+    "Adafruit",
+    "AHTX",
+    "beatsin",
+    "CRGB",
+    "dtostrf",
+    "Fibertel",
+    "hivemq",
+    "IRAM",
+    "leds",
+    "LEDS",
+    "MQTT",
+    "pixzillav",
+    "SSID"
+  ],
+  "cSpell.language": "en,es-ES",
+  "files.associations": {
+    "*.ejs": "html",
+    "array": "cpp",
+    "random": "cpp",
+    "sstream": "cpp"
+  }
+}
