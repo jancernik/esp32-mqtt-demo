@@ -30,19 +30,22 @@ A live version of the web client is live at https://mqtt-esp32.pages.dev
 **To run it locally:**
 
 1.  Clone this repo
-
-`$ git clone git@github.com:cernikkk/esp32-mqtt-demo.git`
+```bash
+git clone git@github.com:cernikkk/esp32-mqtt-demo.git
+```
 
 2. Change directory
-
-`$ cd esp32-mqtt-demo/browser/`
+```bash
+cd esp32-mqtt-demo/browser/
+```
 
 3. Install dependencies
-
-`$ npm install`
+```bash
+npm install
+```
 
 3. Run as development
-
-`$ npm start`
-
+```bash
+npm start
+```
 > Since the broker uses different ports to connect over HTTP and HTTPS, the broker URL is dependent on the environment. If you wish to change them, they are located inside `webpack.prod.js` and `webpack.dev.js`
