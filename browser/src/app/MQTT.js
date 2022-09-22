@@ -3,11 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Handle from './handlers';
 import topic from './topics';
 
-// const client = mqtt.connect('ws://broker.emqx.io:8083/mqtt', {
-//   clientId: uuidv4(),
-// });
-
-const client = mqtt.connect('wss://broker.emqx.io:8084/mqtt', {
+const client = mqtt.connect(BROKER_URL, {
   clientId: uuidv4(),
 });
 
@@ -23,7 +19,7 @@ export default class MQTT {
       }, 200);
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      },400);
+      }, 400);
     });
     client.on('error', (error) => console.log('Error:', error));
     client.on('message', (topic, message) => {

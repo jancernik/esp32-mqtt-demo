@@ -4,6 +4,7 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
+const webpack = require('webpack');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -18,6 +19,9 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({ filename: '[name]-[hash].css' }),
     new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      BROKER_URL: JSON.stringify('wss://broker.emqx.io:8084/mqtt')
+    }),
   ],
   module: {
     rules: [
