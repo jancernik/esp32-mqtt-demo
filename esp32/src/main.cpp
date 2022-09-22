@@ -11,7 +11,6 @@
 const char* LOCAL_SSID = "";
 const char* LOCAL_PASS = "";
 
-const char* MQTT_CLIENT_ID = "4c76b7s360nu90untr5d54s87nghhu8gv675fd";
 const char* MQTT_SERVER = "broker.emqx.io";
 const int MQTT_PORT = 1883;
 
@@ -50,6 +49,19 @@ Adafruit_AHTX0 aht;
 
 char* stringToChar(String str) {
   return &*str.begin();
+}
+
+#define MAX_UUID 10
+
+const char * generateUUID(){
+  const char possible[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  static char uuid[MAX_UUID + 1];
+  for(int p = 0, i = 0; i < MAX_UUID; i++){
+    int r = random(0, strlen(possible));
+    uuid[p++] = possible[r];
+  }
+  uuid[MAX_UUID] = '\0';
+  return uuid;
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -137,7 +149,7 @@ void setup() {
   while (!connected) {
     if (millis() > lastConenctionCheck + 500) {
       lastConenctionCheck = millis();
-      connected = client.connect(MQTT_CLIENT_ID);
+      connected = client.connect(generateUUID());
     }
     serialPrintLoading("Broker");
     ledsShowLoading(leds, NUM_LEDS, CRGB(0, 0, 255));
