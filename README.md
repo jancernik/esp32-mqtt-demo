@@ -45,4 +45,4 @@ A live version of the web client is live at https://mqtt-esp32.pages.dev
 
 `$ npm start`
 
-> Since the broker uses different ports to connect over HTTP and HTTPS, the broker URL is dependent on the environment. If you wish to change it, they are located inside `webpack.prod.js` and `webpack.dev.js`
+> Since the broker uses different ports to connect over HTTP and HTTPS, the broker URL is dependent on the environment. If you wish to change them, they are located inside `webpack.prod.js` and `webpack.dev.js`
