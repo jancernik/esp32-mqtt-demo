@@ -10,7 +10,7 @@ One of the two clients is an ESP32. Alongside it, the breadboard has a temperatu
 
 The other client (or clients) is a browser. On the website, there is a section with the values of temperature and humidity and a color picker.
 - The sensor readings are obtained from a topic the browser is **subscribed** to.
-- The color from the color picker is **published** into a topic
+- The color from the color picker is **published** into a topic.
 
 ## Components
 - NodeMCU-32S Microcontroller
