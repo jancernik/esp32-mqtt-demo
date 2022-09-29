@@ -44,7 +44,7 @@ cd esp32-mqtt-demo/browser/
 npm install
 ```
 
-3. Run as development
+4. Run as development
 ```bash
 npm start
 ```
