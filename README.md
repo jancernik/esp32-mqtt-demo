@@ -31,7 +31,7 @@ A live version of the web client is live at https://mqtt-esp32.pages.dev
 
 1.  Clone this repo
 ```bash
-git clone git@github.com:cernikkk/esp32-mqtt-demo.git
+git clone git@github.com:jancernik/esp32-mqtt-demo.git
 ```
 
 2. Change directory
